@@ -2,7 +2,10 @@
 
 # Description：
 '''This is the demo code for all the functions of UPS Plus.
+https://wiki.52pi.com/index.php?title=EP-0136
+
 Advanced users can select the functions they need through the function options provided in the code below to customize and develop them to meet their needs.
+See https://github.com/geeekpi/upsplus/tree/main
 '''
 
 import argparse
