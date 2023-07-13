@@ -223,7 +223,7 @@ if __name__ == "__main__":
         """,
     )
 
-    parser.add_argument("-r", "--raw",     dest="raw",     action="store_true", help="print json data to stddout")
+    parser.add_argument("-r", "--raw",     dest="raw",     action="store_true", help="Print data to stddout")
 
     parser.add_argument("--influxdb",      dest="influxdb",      action="store_true",                                 help="publish to influxdb")
     parser.add_argument("--influxdb_host", dest="influxdb_host", action="store",      default="localhost",            help="hostname of InfluxDB HTTP API")
