@@ -44,7 +44,7 @@ optional arguments:
 To configure as a cron job, `crontab -e`.
 Recommend to run every 2 minutes, as that is the sampling interval of the battery status.
 
-`*/2 * * * * /usr/bin/python3 /home/pi/RPi-UPSPlus-Exporter/UPSPlus-exporter.py  --influxdb --influxdb_user logger --influxdb_pass pass`
+ `*/2 * * * * /usr/bin/python3 /home/pi/RPi-UPSPlus-Exporter/UPSPlus-exporter.py  --influxdb --influxdb_user logger --influxdb_pass pass`
 
   
   ## License
