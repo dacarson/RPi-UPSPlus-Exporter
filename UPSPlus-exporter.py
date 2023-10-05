@@ -211,7 +211,7 @@ def publish_device_data():
         UID0 = "%08X" % (aReceiveBuf[243] << 24 | aReceiveBuf[242] << 16 | aReceiveBuf[241] << 8 | aReceiveBuf[240])
         UID1 = "%08X" % (aReceiveBuf[247] << 24 | aReceiveBuf[246] << 16 | aReceiveBuf[245] << 8 | aReceiveBuf[244])
         UID2 = "%08X" % (aReceiveBuf[251] << 24 | aReceiveBuf[250] << 16 | aReceiveBuf[249] << 8 | aReceiveBuf[248])
-        print("Serial Number is:" + UID0 + "-" + UID1 + "-" + UID2 )
+        print("Serial number: " + UID0 + "-" + UID1 + "-" + UID2 )
         
 #----------------
 if __name__ == "__main__":
@@ -236,13 +236,10 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    while True:
-      try:
-          publish_raspberry_pi_data()
-          publish_battery_data()
-          publish_device_data()
-      except Exception as e:
-          print("Failed to fetch data: %s" % e)
-
-      time.sleep(10)
+    try:
+        publish_raspberry_pi_data()
+        publish_battery_data()
+        publish_device_data()
+    except Exception as e:
+        print("Failed to fetch data: %s" % e)
 

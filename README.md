@@ -4,7 +4,9 @@
 
 
 ## Description
-Export [UPSPlus](https://wiki.52pi.com/index.php?title=EP-0136) data to Influx DB so that it can be graphed with Grafana. Written so that it could be used as a service.
+Export [UPSPlus](https://wiki.52pi.com/index.php?title=EP-0136) data to Influx DB so that it can be graphed with Grafana. 
+
+To be run as a cron job, do not run as a service. (If run in a loop, it will fail due to running out of file handles - SMBUS leaks handles)
 
 Based on example scripts from ([UPSplus](https://github.com/geeekpi/upsplus/tree/main)) that show how to get all the detail from the device.
 
@@ -38,6 +40,11 @@ optional arguments:
                         InfluxDB database name
   -v, --verbose         verbose mode
   ````
+
+To configure as a cron job, `crontab -e`.
+Recommend to run every 2 minutes, as that is the sampling interval of the battery status.
+`*/2 * * * * /usr/bin/python3 /home/pi/RPi-UPSPlus-Exporter/UPSPlus-exporter.py  --influxdb --influxdb_user logger --influxdb_pass pass`
+
   
   ## License
 
